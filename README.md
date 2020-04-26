@@ -5,7 +5,8 @@
 bikeshare
 
 ### Description
-Python project for analysing bike rental data from NY, Washington, Chicago (code by GitHub-user Bayer-DL)
+Python project for analysing bike rental data from NY, Washington, 
+Chicago (code by GitHub-user Bayer-DL)
 
 ### Files used
 bikeshare.py
