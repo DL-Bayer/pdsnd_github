@@ -170,7 +170,7 @@ def time_stats(df):
     # *** CAVEAT ***: 'days' runs days[1]='monday' to days[6]='sunday' and
     # 'dt.weekday' returns 0 (Monday) to 6 (Sunday), so re-indexing (+1)
     # is necessary
-    print('The most common day is ', days[df['Start Time'].dt.weekday.mode()[0] + 1].capitalize(), '.', sep = '')
+    print('The most common weekday is ', days[df['Start Time'].dt.weekday.mode()[0] + 1].capitalize(), '.', sep = '')
     # see description above for months - but for weekdays we need to shift index again
     # here we need to add 1 (instead of subtracting) because above we converted our 1...7 notation into 0...6 (datetime) 
     # and here we receive an output from datetime
