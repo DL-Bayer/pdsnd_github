@@ -60,13 +60,6 @@ def get_filters():
             else:
                 print('"', element, '" is not an available option. Please enter again.', sep = '')
 
-            # while loop runs until valid element gets entered
-            # end, sep: argument for print function (formats output)
-            # element: variable name for for-loop (iteration through list elements)
-            # len(list): function retruns length of list
-            # counter: for end of list reached y/n, format output accordingly
-            # input(): returns user entered text as string
-            # lower(): function to converts entries to lower case
  
 
     print('Hello! Let\'s explore some US bikeshare data!')
