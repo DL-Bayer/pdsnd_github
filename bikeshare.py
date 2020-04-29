@@ -13,7 +13,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 # names of some months (locale independent) and a designation for all months ('all')
 # this list is also used for the input processing
-months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+months = ['all', 'January', 'February', 'March', 'April', 'May', 'June']
 
 # names of the weekdays (locale independent) and a designation for all weekdays ('all')
 # this list is also used for the input processing
