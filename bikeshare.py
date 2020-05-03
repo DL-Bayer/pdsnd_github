@@ -13,7 +13,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 # names of some months (locale independent) and a designation for all months ('all')
 # this list is also used for the input processing
-months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+months = ['all', 'January', 'February', 'March', 'April', 'May', 'June']
 
 # names of the weekdays (locale independent) and a designation for all weekdays ('all')
 # this list is also used for the input processing
@@ -163,7 +163,7 @@ def time_stats(df):
     # *** CAVEAT ***: 'days' runs days[1]='monday' to days[6]='sunday' and
     # 'dt.weekday' returns 0 (Monday) to 6 (Sunday), so re-indexing (+1)
     # is necessary
-    print('The most common day is ', days[df['Start Time'].dt.weekday.mode()[0] + 1].capitalize(), '.', sep = '')
+    print('The most common weekday is ', days[df['Start Time'].dt.weekday.mode()[0] + 1].capitalize(), '.', sep = '')
     # see description above for months - but for weekdays we need to shift index again
     # here we need to add 1 (instead of subtracting) because above we converted our 1...7 notation into 0...6 (datetime) 
     # and here we receive an output from datetime
@@ -295,12 +295,12 @@ def user_stats(df):
 
 
 def interactive_output_raw_data(df):
-    """ ask user if (s)he wants to output 5 lines of raw data of filtered DataFrame df, do so, ask user if (s)he wants 5 lines more """
+    """ ask user if (s)he wants to output 10 lines of raw data of filtered DataFrame df, do so, ask user if (s)he wants 5 lines more """
 
     line = 0
-    answer = input('Would you like to see 5 lines of the filtered raw data? Enter "yes" or "y" to continue, anything else to abort: ').lower()
+    answer = input('Would you like to see 10 lines of the filtered raw data? Enter "yes" or "y" to continue, anything else to abort: ').lower()
     while answer == 'yes' or answer == 'y':
-        endline = line + 5
+        endline = line + 10
         if endline < len(df):
             print(df.iloc[line:endline])
         else:
@@ -308,16 +308,16 @@ def interactive_output_raw_data(df):
             print('End of filtered raw data. No more lines to print.')
             return            
         line = endline
-        answer = input('Would you like to see 5 more lines of the filtered raw data? Enter "yes" or "y" to continue, anything else to abort: ').lower()
+        answer = input('Would you like to see 10 more lines of the filtered raw data? Enter "yes" or "y" to continue, anything else to abort: ').lower()
 
         # line: local variable in scope of function interactive_output_raw_data(df))
         # answer: local variable set with input() function to display question-text string
         # lower(): set answer to lower case to avoid entry errors
-        # endline: local variable as "line + 5" (to avoid changing "line" numbers in different places)
+        # endline: local variable as "line + 10" (to avoid changing "line" numbers in different places)
         # if + iloc: 
         # if variable endline is smaller or equal to number of DataFrame rows (calculated via len(df)) 
         # then print lines via using iloc()-function, which displays lines of Pandas DataFrame
-        # as long as endline < size of DataFrame: print 5 lines
+        # as long as endline < size of DataFrame: print 10 lines
         # else: if end of DataFrame is reached:
         # print until end of DataFrame and display comment (End of filtered...)
         # line = endline: value after last iteration of while-loop, to re-start with new line-value in case user answers "yes" again
